@@ -3,3 +3,70 @@
     flex: 1; /*take as much space as possible*/
     height:80rem;
 }
+
+.gallery {
+    display:flex;
+
+    &__item {
+
+    }
+
+    &__photo {
+        width:100%;
+        display:block;
+    }
+}
+
+.overview {
+    display:flex;
+    border-bottom: 1px solid var(--color-grey-light-2);
+    align-items: center;
+
+    &__star {
+        //flex: 1;
+        margin-right: auto; 
+        //here, compare to flex:1; it will take the same space, but item will be limite by his own size, not growing size to maximum
+        display:flex;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-primary);   
+    }
+
+    &__icon-location {
+        margin-right: .7rem;
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex;
+        vertical-align: center;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color:white;
+        margin-left: 3rem;
+        align-self: stretch;
+        padding: 0 2.25rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -.3rem;
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
