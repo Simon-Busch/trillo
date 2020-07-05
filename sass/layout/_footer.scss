@@ -1,0 +1,19 @@
+.footer__link,
+.footer__github {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-decoration: none;
+    transition: transform .4s;
+}
+
+.footer__github {
+    font-size: 2rem;
+    margin-left:2rem;
+}
+
+
+.footer__link:hover,
+.footer__github:hover {
+    color: var(--color-primary);
+    transform: scale(1.2);
+}
