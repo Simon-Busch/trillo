@@ -1,0 +1,9 @@
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--color-light-grey-2);
+    display:flex;
+    justify-content: space-between; /*devides the empty space between the elements*/
+    align-items: center;
+}
