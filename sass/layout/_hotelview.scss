@@ -14,7 +14,11 @@
 
 .overview {
     display:flex;
+<<<<<<< HEAD
     border-bottom: var(--border-light);
+=======
+    border-bottom: var(--border-std);
+>>>>>>> d2b48d0d2d5f8ab5194a0d9eeeaebcba4f42c819
     align-items: center;
 
     &__star {
