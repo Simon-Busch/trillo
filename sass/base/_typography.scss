@@ -5,3 +5,44 @@
     letter-spacing: 1px;
     padding: 1.5rem 3rem ;
 }
+
+.paragraph {
+
+    &:not(:last-of-type) {
+        margin-bottom: 2rem;
+    }
+}
+
+.list {
+    list-style-type: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--border-light);
+    border-bottom: var(--border-light);
+
+    display:flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+
+    &__item::before {
+        content:""; /*!! without content, it won't appear*/
+        display:inline-block;
+        height: 1.2rem;
+        width:1.2rem;
+        margin-right: .7rem;
+        //older browsers
+        //background-image: url(../../img/chevron-thin-right.svg);
+        //background-size: cover;
+
+        //newer browsers - masks
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+        -webkit-mask-size:cover;
+        mask-image: url(../../img/chevron-thin-right.svg);
+        mask-size:cover;
+    }
+}

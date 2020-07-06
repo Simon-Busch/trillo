@@ -27,6 +27,8 @@ $color-grey-dark-3:  #999;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark:  0 2rem 6rem rgba(0,0,0,0.3);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0,0.6);
+  --border-light: 1px solid var(--color-grey-light-2);
 }
 
 * {
@@ -101,12 +103,76 @@ body {
   }
 }
 
+@-webkit-keyframes githubAnim {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    color: var(--color-grey-light-4);
+  }
+  100% {
+    -webkit-transform: scale(1.3) rotate(360deg);
+            transform: scale(1.3) rotate(360deg);
+    color: var(--color-primary);
+  }
+}
+
+@keyframes githubAnim {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    color: var(--color-grey-light-4);
+  }
+  100% {
+    -webkit-transform: scale(1.3) rotate(360deg);
+            transform: scale(1.3) rotate(360deg);
+    color: var(--color-primary);
+  }
+}
+
 .heading-primary {
   font-size: 2.25rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1.5rem 3rem;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style-type: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: .7rem;
+}
+
+.list__item::before {
+  content: "";
+  /*!! without content, it won't appear*/
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-right: .7rem;
+  background-color: var(--color-primary);
+  -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+  mask-image: url(../../img/chevron-thin-right.svg);
+  mask-size: cover;
 }
 
 .btn-inline {
@@ -288,11 +354,68 @@ body {
   min-height: 50rem;
 }
 
+.detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--border-light);
+}
+
+.description {
+  font-size: 1.4rem;
+  color: var(--color-grey-dark-2);
+  padding: 3rem;
+  -webkit-box-shadow: var(--shadow-light);
+          box-shadow: var(--shadow-light);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+.user-reviews {
+  background-color: yellowgreen;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recommend__count {
+  margin-right: auto;
+}
+
+.recommend__photo {
+  -webkit-box-sizing: content;
+          box-sizing: content;
+  /*so in this specific case, when we add the border, it doesn't go IN the picture*/
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.recommend__photo:not(:last-child) {
+  margin-right: -1.5rem;
+}
+
 .header {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--border-light);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,22 +433,19 @@ body {
   font-size: 1.2rem;
   color: var(--color-grey-light-4);
   text-decoration: none;
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .footer__github {
-  font-size: 2rem;
-  margin-left: 2rem;
+  font-size: 3rem;
 }
 
 .footer__link:hover,
 .footer__github:hover {
   color: var(--color-primary);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-animation: githubAnim 1s infinite ease;
+  animation: githubAnim 1s infinite;
 }
 
 .sidebar {
@@ -418,7 +538,6 @@ body {
       -ms-flex: 1;
           flex: 1;
   /*take as much space as possible*/
-  height: 80rem;
 }
 
 .gallery {
@@ -436,7 +555,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--border-light);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
