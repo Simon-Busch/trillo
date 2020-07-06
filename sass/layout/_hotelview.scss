@@ -1,15 +1,10 @@
 .hotel-view {
     background-color: #fff;
     flex: 1; /*take as much space as possible*/
-    height:80rem;
 }
 
 .gallery {
     display:flex;
-
-    &__item {
-
-    }
 
     &__photo {
         width:100%;
@@ -19,7 +14,7 @@
 
 .overview {
     display:flex;
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--border-std);
     align-items: center;
 
     &__star {
