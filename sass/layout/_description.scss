@@ -25,6 +25,10 @@
         margin-right: auto;
     }
 
+    &__friends {
+        display:flex; /*wathever the size, the photo will always stay side by side*/
+    }
+
     &__photo {
         box-sizing:content; /*so in this specific case, when we add the border, it doesn't go IN the picture*/
         height:4rem;
@@ -33,7 +37,7 @@
         border:2px solid white;
 
         &:not(:last-child){
-            margin-right:-1.5rem;
+            margin-right:-2rem;
         }
     }
 }

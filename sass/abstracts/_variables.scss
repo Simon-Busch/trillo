@@ -40,4 +40,10 @@ $color-grey-dark-3:  #999;
     --border-light: 1px solid var(--color-grey-light-2);
 }
 
+/*SASS VARIABLE*/
+//would be if we use the old school strategy media querries
+$bp-largest: 75em; /*1200/16*/
+$bp-large: 68.75em; /*1100/16*/
+$bp-medium: 56.25;
+
 // interestesting to set up var likes think because they are accessible with JS

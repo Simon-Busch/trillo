@@ -4,6 +4,10 @@
     padding: 3.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--border-std);
+
+    @include respond(tab-port) { 
+        padding: 2rem;
+    }
 }
 
 .description {
@@ -12,5 +16,10 @@
     padding: 3rem;
     flex: 0 0 60%;
     margin-right:4.5rem;
+
+    @include respond(tab-port) { 
+        padding: 1.5rem;
+        margin-right:2rem;
+    }
 }
 

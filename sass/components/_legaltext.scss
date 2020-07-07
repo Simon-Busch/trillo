@@ -3,4 +3,8 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 1rem 2.5rem;
+
+    @include respond(tab-port) { 
+        display: none;
+    }
 }

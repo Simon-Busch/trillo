@@ -1,3 +1,7 @@
 .content {
     display:flex; /*items will be side by side*/
+
+    @include respond(tab-port) { 
+        flex-direction: column;
+    }
 }
