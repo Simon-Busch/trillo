@@ -6,6 +6,13 @@
     padding: 1.5rem 3rem ;
 }
 
+.heading-secondary{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
 .paragraph {
     
     &:not(:last-of-type) {

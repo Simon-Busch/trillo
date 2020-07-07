@@ -138,6 +138,13 @@ body {
   padding: 1.5rem 3rem;
 }
 
+.heading-secondary {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem;
 }
@@ -208,6 +215,69 @@ body {
 
 .btn-inline span {
   margin-left: 3px;
+}
+
+.cta-btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cta-btn > * {
+  height: 100%;
+  /*very important in this kind of animation to define height and width*/
+  width: 100%;
+  display: inline-block;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.cta-btn__visible {
+  padding: 2rem 7.5rem;
+}
+
+.cta-btn__invisible {
+  display: inline-block;
+  position: absolute;
+  padding: 2rem 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: -100%;
+  /*move up exactly the size of the element !*/
+}
+
+.cta-btn:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+  background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+}
+
+.cta-btn:hover .cta-btn__visible {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.cta-btn:hover .cta-btn__invisible {
+  top: 0;
+}
+
+.cta-btn:focus {
+  outline: none;
+  -webkit-animation: pulsate 1s infinite;
+          animation: pulsate 1s infinite;
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
 }
 
 .legal {
