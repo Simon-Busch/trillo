@@ -6,4 +6,11 @@
     display:flex;
     justify-content: space-between; /*devides the empty space between the elements*/
     align-items: center;
+
+    @include respond(small-phone) { 
+        flex-wrap:wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
 }
+

@@ -7,6 +7,12 @@
     align-items: center;
     justify-content: center;
 
+    @include respond(small-phone) { 
+        order:1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit; /*input doesn't inherit that's why we must force*/
         font-size: inherit;

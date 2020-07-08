@@ -1,18 +1,26 @@
-.detail {
-    display:flex;
-    padding:4.5rem;
-    background-color: var(--color-grey-light-1);
-    border-bottom: var(--border-light);
-}
+
 
 .description {
     font-size: 1.4rem;
+    background-color: #fff;
     color:var(--color-grey-dark-2);
     padding: 3rem;
     box-shadow: var(--shadow-dark);
     flex: 0 0 60%;
     margin-right: 4.5rem;
+
+    @include respond(tab-port) { 
+        padding: 1.5rem;
+        margin-right:2rem;
+    }
+
+    @include respond(phone) { 
+        margin-right:0;
+        margin-bottom:2rem;
+    }
 }
+
+
 
 .recommend {
     font-size: 1.3rem;
